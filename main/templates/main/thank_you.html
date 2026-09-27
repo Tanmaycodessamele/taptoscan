@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+
+{% block title %}Update Successful — {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Your card has been updated successfully.{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+
+{% block content %}
+<h1>Your card has been updated</h1>
+<p>New scans of your card will now redirect to your chosen destination.</p>
+<p><a href="{% url 'manage' %}">Update another card</a></p>
+{% endblock %}

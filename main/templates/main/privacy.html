@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+
+{% block title %}Privacy Policy — {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Privacy Policy for {{ SITE_NAME }}.{% endblock %}
+
+{% block content %}
+<h1>Privacy Policy</h1>
+<p><em>Last updated: [ADD DATE]. This is a starting template, not legal advice — have it reviewed before relying on it.</em></p>
+
+<p>{{ SITE_NAME }} ("we", "us") operates this website. This page explains what information we collect and how we use it.</p>
+
+<h2>Information We Collect</h2>
+<ul>
+    <li>Your card ID and a securely hashed version of your card password — we never store your password in plain text.</li>
+    <li>The destination URL you set for your card.</li>
+    <li>Basic technical data such as IP address and timestamps, used to keep the service secure and prevent abuse.</li>
+</ul>
+
+<h2>How We Use It</h2>
+<p>Solely to operate the redirect service: looking up your card, verifying your password, and sending visitors to your chosen destination.</p>
+
+<h2>Data Sharing</h2>
+<p>We do not sell your data. We do not share it with third parties except where required by law.</p>
+
+<h2>Data Retention</h2>
+<p>We retain card data for as long as the card remains active. Contact us to request deletion.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy? Contact us at {{ CONTACT_EMAIL|default:"[ADD YOUR CONTACT EMAIL]" }}.</p>
+{% endblock %}

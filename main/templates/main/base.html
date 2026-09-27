@@ -1,0 +1,30 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ SITE_NAME }} — manage your card.{% endblock %}">
+    <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}{{ SITE_NAME }}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ SITE_NAME }} — manage your card.{% endblock %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    {% if GA_ID %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_ID }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ GA_ID }}');
+    </script>
+    {% endif %}
+</head>
+<body>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ SITE_NAME }} &middot; <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

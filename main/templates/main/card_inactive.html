@@ -1,0 +1,11 @@
+{% extends "main/base.html" %}
+
+{% block title %}Card Not Set Up — {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}This card doesn't have a destination assigned yet.{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+
+{% block content %}
+<h1>This card isn't set up yet</h1>
+<p>This card doesn't have a destination assigned, or the code isn't valid.</p>
+<p>If you're the owner, <a href="{% url 'manage' %}">set it up here</a>. If you think this is an error, contact support.</p>
+{% endblock %}

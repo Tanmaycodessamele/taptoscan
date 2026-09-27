@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+
+{% block title %}Update Your Card — {{ SITE_NAME }}{% endblock %}
+{% block meta_description %}Enter your card ID and password to change where your card redirects.{% endblock %}
+
+{% block content %}
+<h1>Update Your Card</h1>
+<p>Enter your card ID and password to change where it redirects. Changes apply immediately.</p>
+
+{% if error %}
+  <p class="error" role="alert">{{ error }}</p>
+{% endif %}
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Card</button>
+</form>
+
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+        <summary>Where do I find my card ID and password?</summary>
+        <p>Both are printed on your card. The card ID is visible on the front; the password is separate — keep it safe, as it's needed for every update.</p>
+    </details>
+
+    <details>
+        <summary>How long does it take for a change to apply?</summary>
+        <p>Updates apply immediately. New scans of your card will use the new destination right away.</p>
+    </details>
+
+    <details>
+        <summary>I lost my password. What do I do?</summary>
+        <p>Contact support with your card ID and proof of purchase, and we'll help you regain access.</p>
+    </details>
+
+    <details>
+        <summary>Can I set any website as my destination?</summary>
+        <p>Any valid http:// or https:// link. Cards pointing to illegal or abusive destinations will be disabled.</p>
+    </details>
+
+    <details>
+        <summary>Can someone else change my card without my password?</summary>
+        <p>No. Only someone with the correct card ID and password can update its destination.</p>
+    </details>
+</section>
+{% endblock %}

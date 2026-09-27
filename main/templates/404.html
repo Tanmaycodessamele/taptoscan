@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+
+{% block title %}Page Not Found — {{ SITE_NAME }}{% endblock %}
+{% block robots %}noindex, follow{% endblock %}
+
+{% block content %}
+<h1>404 — Page not found</h1>
+<p>The page you're looking for doesn't exist.</p>
+<p><a href="{% url 'manage' %}">Go to the homepage</a></p>
+{% endblock %}
